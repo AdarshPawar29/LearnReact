@@ -13,17 +13,19 @@ class Counters extends Component {
      }
     handleDelete = counterId => {
         const counters = this.state.counters.filter(c => c.id !== counterId)
-        this.setState({counters})
+        this.setState({counters});
     } 
-    render() { 
+    render() {
         return (
             <div>
                 {this.state.counters.map(counter => 
                 <Counter 
                     key={counter.id} 
-                    id={counter.id}
+                    //id={counter.id}
                     onDelete={this.handleDelete} 
-                    value={counter.value}> 
+                    //value={counter.value}
+                    counter = {counter} //with help of these we no longer need the id and value properties we can use them in counters whie writing counters.id and counters.value
+                    > 
                 </Counter>)}
             </div>
           );
